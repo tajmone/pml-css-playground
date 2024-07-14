@@ -1,0 +1,121 @@
+###################################################
+#  The Practical Markup Language CSS Playground:  #
+#  https://github.com/tajmone/pml-css-playground  #
+###################################################
+
+root = true
+
+
+## PML Sources
+##############
+[*.pml]
+charset = utf-8
+end_of_line = unset
+indent_style = space
+indent_size = unset
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+
+## Repository Configurations
+############################
+[.{git*,editorconfig}]
+indent_style = space
+indent_size = unset
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[.gitmodules]
+indent_style = tab
+
+[.gitkeep]
+insert_final_newline = false
+
+
+## Shell Scripts
+################
+[*.sh]
+end_of_line = lf
+indent_style = tab
+indent_size = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Batch Scripts
+################
+[*.{bat,cmd}]
+indent_style = tab
+indent_size = unset
+end_of_line = crlf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Markdown GFM
+###############
+[*.md]
+indent_style = space
+indent_size = unset
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## JSON
+#######
+[*.json]
+indent_style = space
+indent_size = 2
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Ruby
+#######
+[{*.rb,*.gemspec,*.rake,Rakefile,rakefile}]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+## Sass/SCSS
+############
+[*.scss]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+; C-style doc comments:
+block_comment_start = /*
+block_comment = *
+block_comment_end = */
+
+
+## JavaScript
+#############
+[*.js]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+; C-style doc comments:
+block_comment_start = /*
+block_comment = *
+block_comment_end = */

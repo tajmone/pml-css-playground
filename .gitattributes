@@ -1,0 +1,53 @@
+###################################################
+#  The Practical Markup Language CSS Playground:  #
+#  https://github.com/tajmone/pml-css-playground  #
+###################################################
+
+* text=auto
+
+## Repository Configuration
+###########################
+.editorconfig    text eol=lf
+.travis.yml      text eol=lf
+.gitattributes   text eol=lf
+.gitconfig       text eol=lf
+.gitignore       text eol=lf
+.gitmodules      text eol=lf
+
+## Documentation Files
+######################
+*.md         text
+*.pml        text linguist-language=PML
+*.txt        text
+LICENSE      text
+
+## Scripts
+##########
+*.bat   text eol=crlf
+*.com   text eol=crlf
+*.js    text eol=lf
+*.sh    text eol=lf
+
+## Ruby Files
+#############
+[attr]Ruby text eol=lf
+*.rb        Ruby
+*.rake      Ruby
+*.gemspec   Ruby
+Rakefile    Ruby
+rakefile    Ruby
+
+## Sass/CSS
+###########
+*.scss   text eol=lf
+*.css    text eol=lf linguist-generated=true
+
+## HTML
+#######
+*.html   text linguist-generated=true
+
+## Third Party Tools
+####################
+
+# ColorImpact 4 palette projects:
+*.cifc   binary
