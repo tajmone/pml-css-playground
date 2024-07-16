@@ -3,6 +3,9 @@
 #  https://github.com/tajmone/pml-css-playground  #
 ###################################################
 
+*.html
+/css__*/**/*.css
+/css__*/**/*.css.map
 pml_tags.json
 PML_meta_data.json
 
