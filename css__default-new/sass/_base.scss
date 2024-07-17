@@ -1,6 +1,14 @@
-// PML version: 4.0.0
-// This SCSS partial is adapted from the default PML stylesheet for HTML files.
+// "Base rules are the defaults. They are almost exclusively single element
+//  selectors but it could include attribute selectors, pseudo-class selectors,
+//  child selectors or sibling selectors. Essentially, a base style says that
+//  wherever this element is on the page, it should look like this."
 
+// "A Base rule is applied to an element using an element selector, a descendent
+//  selector, or a child selector, along with any pseudo-classes. It doesn't
+//  include any class or ID selectors. It is defining the default styling for
+//  how that element should look in all occurrences on the page."
+
+//                                        --- Jonathan Snook, "SMACSS" (2011)
 
 /* basics */
 
@@ -19,54 +27,6 @@ body {
   */
 }
 
-
-/* skeleton */
-
-.pml-doc-wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.pml-doc-header, .pml-doc-footer {
-  flex-grow: 0;
-
-  /*
-  padding:1em;
-  */
-}
-
-.pml-doc-content {
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: row;
-
-  height: 100%; // allow individual scroll bars for left, text, and right
-}
-
-.pml-doc-left, .pml-doc-right {
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 15%;
-
-  background-color: #fafafa;
-}
-
-.pml-doc-text {
-  flex-grow: 0;
-  flex-shrink: 3;
-  max-width: 800px;
-}
-
-.pml-doc-left, .pml-doc-text, .pml-doc-right {
-  overflow-y: auto;  // show scrollbar if necessary
-  scrollbar-width: thin;  // works only in Firefox (2021-01-28)
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
 
 
 /* titles */
@@ -291,83 +251,3 @@ h4, h5, h6 {
 .pml-footnote td p:last-child {
   margin-bottom: 0;
 }
-
-
-/* Table of Contents (TOC) */
-
-.pml-toc {
-  /*
-  border-bottom: 1px solid lightgrey;
-  padding-bottom: 1em;
-  */
-}
-
-.pml-toc-title {
-  margin-top: 0.7em;
-}
-
-.pml-toc ul {
-  padding-left: 0em;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.pml-toc ul ul {
-  padding-left: 1.5em;
-}
-
-.pml-toc li {
-  list-style-type: none;  // remove standard bullet
-  line-height: 120%;
-  margin-top: 0.4em;
-}
-
-.pml-toc a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.pml-toc summary {
-  list-style-position: outside;  // works in Firefox, but not (yet?) in Chrome
-  cursor: pointer;
-}
-
-// hack because list-style-position doesn't work (yet?) in Chrome
-.pml-toc summary::-webkit-details-marker {
-  margin-left: -1em;
-}
-
-.pml-toc-tree {
-  margin-left: 1em;
-}
-
-
-/* global */
-
-.pml-bordered {
-  border: 1px solid grey;
-}
-
-.pml-hidden {
-  display: none;
-}
-
-.pml-text-align-left {
-  text-align: left;
-}
-
-.pml-text-align-right {
-  text-align: right;
-}
-
-.pml-text-align-center {
-  text-align: center;
-}
-
-/*
-.pml-centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-*/

@@ -1,0 +1,41 @@
+// "State rules are ways to describe how our modules or layouts will look when
+//  in a particular state. Is it hidden or expanded? Is it active or inactive?
+//  They are about describing how a module or layout looks on screens that are
+//  smaller or bigger. They are also about describing how a module might look
+//  in different views like the home page or the inside page."
+
+// "A state is something that augments and overrides all other styles.
+//  States are generally applied to the same element as a layout rule or
+//  applied to the same element as a base module class.
+
+//                                        --- Jonathan Snook, "SMACSS" (2011)
+
+/* global */
+
+.pml-bordered {
+  border: 1px solid grey;
+}
+
+.pml-hidden {
+  display: none;
+}
+
+.pml-text-align-left {
+  text-align: left;
+}
+
+.pml-text-align-right {
+  text-align: right;
+}
+
+.pml-text-align-center {
+  text-align: center;
+}
+
+/*
+.pml-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
