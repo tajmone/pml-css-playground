@@ -22,6 +22,29 @@
 
 .pml-toc-title {
   margin-top: 0.7em;
+  font-size: var(--ms1);
+}
+
+// ToC Position: Top
+// =================
+article.pml-doc-text > nav.pml-toc {
+  background: #fbfbfb;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: #ddd;
+  border-style: solid;
+  margin: 1.5em 0;
+  padding: 0.5em 0.75em 0.75em 0.75em;
+  .pml-toc-title {
+    margin-top: 0;
+  }
+}
+
+.pml-toc-tree {
+  margin-left: 1em;
+  li {
+    font-size: var(--ms-1);
+  }
 }
 
 .pml-toc ul {
@@ -53,8 +76,4 @@
 // hack because list-style-position doesn't work (yet?) in Chrome
 .pml-toc summary::-webkit-details-marker {
   margin-left: -1em;
-}
-
-.pml-toc-tree {
-  margin-left: 1em;
 }

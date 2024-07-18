@@ -49,7 +49,10 @@
 .pml-doc-text {
   flex-grow: 0;
   flex-shrink: 3;
-  max-width: 800px;
+  max-inline-size: 60ch; // see https://every-layout.dev/rudiments/axioms/#global-defaults
+  // min-width: 72rch; // i.e. approx. 72 characters "body text"/"measure"
+  // max-width: 72rch;
+  // max-width: 800px; // <- original PML CSS
 }
 
 .pml-doc-left, .pml-doc-text, .pml-doc-right {
