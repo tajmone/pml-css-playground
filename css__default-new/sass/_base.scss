@@ -78,6 +78,8 @@ $ms: (
 
 /* basics */
 
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap');
+
 html {
   height: 100%;
 }
@@ -85,11 +87,14 @@ html {
 body {
   height: 100%;
   margin: 0;
-  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-  font-weight: normal;
+  // font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  font-family: "Gelasio", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-size: var(--ms0);
   line-height: 1.4;
-
+  font-variant-numeric: oldstyle-nums; // "lowercase" numerals
   /* can be used to globally increase/decrease text size
   font-size: 1.2em;
   */
@@ -103,6 +108,7 @@ small {
 
 h1, h2, h3, h4, h5, h6 {
   // font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-variant-numeric: lining-nums; // force "uppercase" numerals!
   font-weight: bold;
   color: darkgreen;
 
@@ -158,6 +164,10 @@ h6 {
 .pml-paragraph {
 }
 
+.smallcaps {
+  font-variant-numeric: lining-nums; // force "uppercase" numerals!
+  font-variant-caps: small-caps;
+}
 
 /* table */
 
@@ -273,8 +283,52 @@ h6 {
 .pml-youtube-video {
 }
 
+// Realistic highlighter effect by Max:
+// https://max.hn/thoughts/how-to-create-a-highlighter-marker-effect-in-css
+//    was: rgba(255, 225, 0,
+//    try: rgba(232, 255, 9,  .. for yellow fluo: #e8ff09
+//    try: rgba(232, 255, 9,  .. for green  fluo: #ddff30
+mark {
+  margin: 0 -0.4em;
+  padding: 0.1em 0.4em;
+  border-radius: 0.8em 0.3em;
+  background: transparent; // cover user-agent yellow!
+  background-image: linear-gradient(
+    to right,
+    rgba(221, 255, 48, 0.3),
+    rgba(221, 255, 48, 0.9) 4%,
+    rgba(221, 255, 48, 0.5)
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: var(--ms-2); // WAS: 11px in GH Css
+  font-variant-numeric: lining-nums; // force "uppercase" numerals!
+  line-height: var(--ms-1); // WAS: 10px in GH Css
+  color: #444d56;
+  vertical-align: middle;
+  background-color: #fafbfc;
+  border: solid 1px #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 0.25rem; // WAS: 3px
+  box-shadow: inset 0 -1px 0 #959da5;
+}
 
 /* monospace, code, input, output */
+
+
+code,
+.pml-monospace,
+.pml-code,
+.pml-inline-code,
+.pml-input,
+.pml-output {
+  font-variant-numeric: lining-nums; // force "uppercase" numerals!
+}
 
 .pml-monospace, .pml-code, .pml-inline-code, .pml-input, .pml-output {
   font-family: Consolas, "DejaVu Sans Mono", monospace;

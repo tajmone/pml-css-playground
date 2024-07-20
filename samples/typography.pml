@@ -2,6 +2,43 @@
 
 A document with typography samples of PML elements.
 
+  [ch (id=base) [title Base Typography]
+
+    [ch (id=numerals) [title Numerals: Old-style & Lining]
+
+      Numerals within the body text should be styled using [i old-style] form
+      (aka [i non-lining] or [i text figures] and [i uppercase] numerals), rather than their [i lining]
+      counterparts (aka [i titling] or [i uppercase] numerals: 0123456789.
+
+      Not every font supports both numeral styles, so we'll have to test it
+      here using inline styles to enforce [i lining] numerals via
+      [link (url=https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
+      font-variant-numeric]:
+
+      [list
+        [el old-style: 0123456789 (default)]
+        [el (html_style="font-variant-numeric: lining-nums;") lining: 0123456789 (forced via inline style)]
+      ]
+
+      Exceptions to the rule are the following styles, which all require lining
+      numerals:
+
+      [list
+        [el [span (html_class="smallcaps") SmallCaps 1234 Style] (via [c .smallcaps] class)]
+        [el inline code: [c 1234567890]]
+        [el [c <kbd>] tags: [verbatim <kbd>Shit</kbd>+<kbd>F3</kbd> <kbd>F9</kbd> ]]
+      ]
+
+      [ch (id=lining-heading) [title Heading with Lining Numerals: 0123456789]
+
+      Headings, on the other hand, should use lining figures.
+
+      ]
+
+    ]
+
+  ]
+
   [ch (id=headings) [title Headings]
 
     Headings level 2 through 6, using the [c \[ch] node.
@@ -13,6 +50,14 @@ A document with typography samples of PML elements.
           [ch [title Heading 5]
             [ch [title Heading 6]
     ]]]]]
+
+    Body text: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+    est laborum.
 
   [ch (id=headers) [title Headers]
 
@@ -86,6 +131,27 @@ A document with typography samples of PML elements.
       [sub Excepteur sint occaecat] cupidatat non proident, sunt in culpa qui officia
       deserunt mollit anim id est laborum.
     ]
+
+    [ch (id=xtra-styles) [title Extra Styles]
+
+      This stylesheet also covers styles for native HTML tags which have no PML
+      syntax representation:
+
+      [list
+        [el [c <kbd>] tag: [verbatim <kbd>Ctr</kbd>+<kbd>C</kbd>, <kbd>F12</kbd> ]]
+        [el [c <mark>] tag: [verbatim <mark>I'm marked text.</mark>&nbsp;&nbsp;
+               <mark>I look like I was highlighted with a florescent marker,
+               thanks to a realistic CSS effect by Max.</mark>]]
+      ]
+
+      and some helper classes for commonly used styles:
+
+      [list
+        [el [span (html_class="smallcaps") SmallCaps] (via [c .smallcaps] class)]
+      ]
+
+    ]
+
   ]
 
   [ch (id=lists) [title Lists]
