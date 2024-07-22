@@ -2,9 +2,9 @@
 
 // For the time being we use '@import', later we'll switch to '@use' at rules...
 
-@import "base";    // SMACSS (1) Base
-@import "layout";  // SMACSS (2) Layout
-@import "modules"; // SMACSS (3) Modules
-@import "states";  // SMACSS (4) States
+@use "base";    // SMACSS (1) Base
+@use "layout";  // SMACSS (2) Layout
+@use "modules"; // SMACSS (3) Modules
+@use "states";  // SMACSS (4) States
 
 // @import "pml-print-default"; // Won't work this way! (see README note)

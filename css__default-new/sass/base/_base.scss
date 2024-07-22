@@ -10,75 +10,10 @@
 
 //                                        --- Jonathan Snook, "SMACSS" (2011)
 
-@use "sass:map";
-
-$measure: 60ch;
-
-// ======================
-// Modular Scale Settings
-// ======================
-
-// Modular scale provides harmonious typographic font sizes by applying a
-// constant ratio to each font increase and decrease. Best results are usually
-// obtained by using one of these three scales, from the 17 available scales:
-
-//    1.125 => (8:9) "major second"
-//    1.2   => (4:5) "minor third"
-//    1.25  => (5:6) "major third"
-
-// The other scales introduce growth factors which are either too abrupt or too
-// subtle. I'm picking the "major second" scale here (ratio 1.125) since it
-// provides reasonable defaults to work with. We're exposing the scale values to
-// the user via global CSS variables on ":root", so that they can be reused by
-// additional custom CSS, and they core values (base font size and scale ratio)
-// might also be easily tweaked directly in the generated stylesheet.
-
-// Value "--ms0" is used for the main body text font size (<p> etc.), whereas
-// "--ms5" to "--ms1" are used for headings <h1> to <h5>, and <h6> uses the same
-// size as <h5> but with added italic. Using a dedicated scale value for <h6>
-// ("--ms1") would have lead to <h1> having value "--ms6", which would be far
-// too big, compared to the body text; furthermore, <h6> is rarely used
-// (shouldn't even be used in good publications), and having it in italic is
-// enough to distinguish it from <h5>.
-
-// Anything smaller than the body text should use the "negative" MS vars (e.g.
-// <small> = "--ms-1"), although it's unlikely that any typographic element
-// might need to be smaller than "--ms-1". Still, these "negative" MS variables
-// could come on hand for alignment or spacing purposes, so I'm leaving them
-// here even if they are unused by the stylesheet.
-
-// For more info on modular scale in web typography, read:
-
-// https://every-layout.dev/rudiments/modular-scale/
-
-$ms: (
-  // https://www.modularscale.com/?1.25&rem&1.125
-  base: 1.25rem,
-  ratio: 1.125  // => "major second" (8:9)
-);
-
-:root {
-  --measure: #{$measure}; /* max chars per line */
-  /* modular scale */
-  --ratio: #{map.get($ms, "ratio")}; /* major second (8:9) */
-  --ms6: calc(var(--ms5) * var(--ratio));
-  --ms5: calc(var(--ms4) * var(--ratio));
-  --ms4: calc(var(--ms3) * var(--ratio));
-  --ms3: calc(var(--ms2) * var(--ratio));
-  --ms2: calc(var(--ms1) * var(--ratio));
-  --ms1: calc(var(--ms0) * var(--ratio));
-  --ms0: #{map.get($ms, "base")}; /* base font size */
-  --ms-1: calc(var(--ms0)  / var(--ratio));
-  --ms-2: calc(var(--ms-1) / var(--ratio));
-  --ms-3: calc(var(--ms-2) / var(--ratio));
-  --ms-4: calc(var(--ms-3) / var(--ratio));
-  --ms-5: calc(var(--ms-4) / var(--ratio));
-  --ms-6: calc(var(--ms-5) / var(--ratio));
-}
-
-/* basics */
 
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* basics */
 
 html {
   height: 100%;
@@ -87,17 +22,13 @@ html {
 body {
   height: 100%;
   margin: 0;
-  // font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   font-family: "Gelasio", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: var(--ms0);
-  line-height: 1.4;
-  font-variant-numeric: oldstyle-nums; // "lowercase" numerals
-  /* can be used to globally increase/decrease text size
-  font-size: 1.2em;
-  */
+  line-height: var(--base-line-height);
+  font-variant-numeric: oldstyle-nums; // "lowercase" numerals by default
 }
 
 small {
@@ -112,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   color: darkgreen;
 
-  margin-top: 1em;
+  margin-top: 1em; // @FIXME!
   margin-bottom: 0px;
 }
 
@@ -139,7 +70,7 @@ h6 {
 
 .pml-doc-title {
 // font-size: 2.2em; // use ms instead!
-  margin-top: 0.2em;
+  margin-top: 0.2em; // @FIXME!
 }
 
 .pml-chapter-title {
@@ -159,15 +90,49 @@ h6 {
 }
 
 
-/* text */
+/* body text */
 
 .pml-paragraph {
 }
 
-.smallcaps {
-  font-variant-numeric: lining-nums; // force "uppercase" numerals!
-  font-variant-caps: small-caps;
+p {
+  margin-block-end: 0;
 }
+
+p + p {
+  text-indent: 1.5em;
+  margin-block-start: 0;
+}
+
+// Paragraph after a list:
+ul + p {
+  margin-block-start: 0;
+}
+
+// Paragraphs within list elements:
+li > p {
+  margin-block: 0;
+}
+
+
+// Lists
+
+ul {
+  margin-block-start: calc(0.5em * var(--base-line-height));
+  margin-block-end: calc(0.5em * var(--base-line-height));
+}
+
+ol ol,
+ol ul,
+ul ul,
+ul ol {
+  margin-block: 0;
+}
+
+li {
+  margin-block: 0;
+}
+
 
 /* table */
 

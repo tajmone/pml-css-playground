@@ -4,13 +4,39 @@ A document with typography samples of PML elements.
 
   [ch (id=base) [title Base Typography]
 
+  The first paragraph shouldn’t be indented, but any other paragraph that’s
+  preceded by a paragraph should.
+  After an interruption in the natural paragraphs flow (a list, quote, heading,
+  etc.) the first paragraph should be without indent again.
+
+  Second paragraph: should be indented!
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+
+  Third paragraph, followed by a list.
+  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+  voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+
+  [list
+    [el This list interrupts the paragraphs flow.]
+    [el Natural spacing should occur.]
+  ]
+
+  Fourth paragraph, after the list interruption:
+  shouldn’t be indented,
+  should be spaced before.
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+  deserunt mollit anim id est laborum.
+
     [ch (id=numerals) [title Numerals: Old-style & Lining]
 
       Numerals within the body text should be styled using [i old-style] form
       (aka [i non-lining] or [i text figures] and [i uppercase] numerals), rather than their [i lining]
       counterparts (aka [i titling] or [i uppercase] numerals: 0123456789.
 
-      Not every font supports both numeral styles, so we'll have to test it
+      Not every font supports both numeral styles, so we’ll have to test it
       here using inline styles to enforce [i lining] numerals via
       [link (url=https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
       font-variant-numeric]:
@@ -61,32 +87,32 @@ A document with typography samples of PML elements.
 
   [ch (id=headers) [title Headers]
 
-    A [c \[header] node is described in the PML documentation as a "(small title)
-    displayed on a separate line" which is not included in the ToC — i.e. a
-    heading of undefined size which plays the role of a "fake heading" but is
-    not part of the ToC (and not a "header" as in "header and footer).
+    A [c \[header] node is described in the PML documentation as a “(small title)
+    displayed on a separate line” which is not included in the ToC — i.e. a
+    heading of undefined size which plays the role of a “fake heading” but is
+    not part of the ToC (and not a “header” as in “header and footer”).
 
     Example:
 
-    [header I'm Just a Header]
+    [header I’m Just a Header]
 
     which is rendered as a [c <div>] with class [c pml-header].
 
-    [note Since the documentation doesn't define how "small" the header title
-          should be, it's probably up the stylesheet creator to decide which
+    [note Since the documentation doesn’t define how “small” the header title
+          should be, it’s probably up the stylesheet creator to decide which
           font-size to adopt.]
 
   ]
 
   [ch (id=captions) [title Captions]
 
-    A [c \[caption] node is described in the PML documentation as a "small title
+    A [c \[caption] node is described in the PML documentation as a “small title
     that is not part of the table of contents, typically displayed below a block
-    element (image, video, table, etc.)"
+    element (image, video, table, etc.)”
 
     Example:
 
-    [caption I'm Just a Caption]
+    [caption I’m Just a Caption]
 
     [note This typographic element needs to be inspected along with another
           element in order to appreciate how the stylesheet handles it.]
@@ -120,7 +146,7 @@ A document with typography samples of PML elements.
     [ch (id=line-height-integrity) [title Line-Height Integrity]
 
       We also need to ensure that superscript and subscript styling in a long
-      paragraph don't break the paragraph line-eight.
+      paragraph don’t break the paragraph line-eight.
 
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
@@ -128,8 +154,21 @@ A document with typography samples of PML elements.
       [sup ut aliquip ex ea] commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
       dolore eu fugiat nulla pariatur.
-      [sub Excepteur sint occaecat] cupidatat non proident, sunt in culpa qui officia
-      deserunt mollit anim id est laborum.
+      [sub Excepteur sint occaecat] cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
+
+      The same goes for inline code, which should have a font-size proportionate
+      to that of the body text, and in case it has background color and borders
+      these shouldn't break the natural line-height of their hosting element.
+
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et [c dolore magna] aliqua.
+      Ut enim ad [c minim veniam], quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat.
+      Duis aute [c irure dolor] in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur.
+      [c Excepteur sint] occaecat cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
     ]
 
     [ch (id=xtra-styles) [title Extra Styles]
@@ -139,7 +178,7 @@ A document with typography samples of PML elements.
 
       [list
         [el [c <kbd>] tag: [verbatim <kbd>Ctr</kbd>+<kbd>C</kbd>, <kbd>F12</kbd> ]]
-        [el [c <mark>] tag: [verbatim <mark>I'm marked text.</mark>&nbsp;&nbsp;
+        [el [c <mark>] tag: [verbatim <mark>I’m marked text.</mark>&nbsp;&nbsp;
                <mark>I look like I was highlighted with a florescent marker,
                thanks to a realistic CSS effect by Max.</mark>]]
       ]
@@ -147,11 +186,11 @@ A document with typography samples of PML elements.
       and some helper classes for commonly used styles:
 
       [list
-        [el [span (html_class="smallcaps") SmallCaps] (via [c .smallcaps] class)]
+        [el Small Caps \u2192 [span (html_class="smallcaps") Small Caps] (via [c .smallcaps] class)]
+        [el All Small Caps \u2192 [span (html_class="all-smallcaps") All Small Caps] (via [c .all-smallcaps] class)]
       ]
 
     ]
-
   ]
 
   [ch (id=lists) [title Lists]
@@ -164,7 +203,69 @@ A document with typography samples of PML elements.
       [el With multiple entries.]
       [el End of parent list.]
     ]
+
+    [ch (id=raw-lists) [title Raw HTML Lists]
+
+      We’ll resort here to a raw HTML blocks to test various string.
+
+      [html
+        ~~~
+        <ol>
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Exotic:
+            <ol>
+              <li>Kiwi</li>
+              <li>papaya</li>
+            </ol>
+          </li>
+        </ol>
+
+        <hr>
+
+        <ul>
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Exotic:
+            <ul>
+              <li>Kiwi</li>
+              <li>papaya</li>
+            </ul>
+          </li>
+        </ul>
+
+        <hr>
+
+        <ol>
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Exotic:
+            <ul>
+              <li>Kiwi</li>
+              <li>papaya</li>
+            </ul>
+          </li>
+        </ol>
+
+        <hr>
+
+        <ul>
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Exotic:
+            <ol>
+              <li>Kiwi</li>
+              <li>papaya</li>
+            </ol>
+          </li>
+        </ul>
+        ~~~
+      ]
+
+    ]
   ]
+
+
 
   [ch (id=blockquotes) [title Quotation Blocks]
 
@@ -180,14 +281,14 @@ A document with typography samples of PML elements.
   [ch (id=admonitions) [title Admonition Blocks]
 
     The [c \[note] node and [c \[admon] nodes with custom labels form the group
-    of so-called "admonition blocks".
+    of so-called “admonition blocks.”
 
-    [note I'm a [c \[note] block, i.e. an admonition with an implicit "note"
+    [note I’m a [c \[note] block, i.e. an admonition with an implicit “note”
           label. Just syntactic sugar for the most used admonition type.
     ]
 
     [admon [alabel Tip]
-      I'm a "Tip admonition," i.e. an [c \[admon] block with the "Tip" label
+      I’m a "Tip admonition," i.e. an [c \[admon] block with the “Tip” label
       defined via the [c \[alabel] node.
     ]
 
@@ -200,7 +301,7 @@ A document with typography samples of PML elements.
 
     [admon [alabel \U0001F525]
       Beware that the [c \[alabel] node might even contain emojis, like in this
-      admonition, which uses the "fire" emoji via [c \\U0001F525].
+      admonition, which uses the “fire” emoji via [c \\U0001F525].
     ]
 
     [ch (id=labeless-admon) [title Admonition without Label]
@@ -209,7 +310,7 @@ A document with typography samples of PML elements.
       without an [c \[alabel] node (valid PML, albeit non-idiomatic), and ensure
       that the stylesheet can handle it gracefully.
 
-      [admon I'm a "plain admonition," i.e. an [c \[admon] block without any label
+      [admon I’m a “plain admonition,” i.e. an [c \[admon] block without any label
              defined.
       ]
     ]
@@ -217,7 +318,7 @@ A document with typography samples of PML elements.
 
   [ch (id=verbatim) [title Verbatim Blocks]
 
-    PML supports various kinds of "verbatim blocks":
+    PML supports various kinds of “verbatim blocks”:
 
     [list
       [el Monospace blocks ([c \[monospace] node)]
@@ -228,7 +329,7 @@ A document with typography samples of PML elements.
 
     [ch (id=monospace) [title Monospace Block]
 
-      Aka "verbatim" or "preformatted" block, via [c <pre class="pml-monospace">].
+      Aka “verbatim” or “preformatted” block, via [c <pre class="pml-monospace">].
 
       [monospace
         1
@@ -256,7 +357,7 @@ A document with typography samples of PML elements.
 
     [ch (id=codeblocks) [title Code Blocks]
 
-      Aka "listing" or "source" block, the [c \[code] node yields a
+      Aka “listing” or “source” block, the [c \[code] node yields a
       [c <pre class="pml-code"><code>] block.
 
       [code (lang=Lua)

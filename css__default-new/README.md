@@ -8,6 +8,7 @@ An attempt to Sassify and improve the default PML stylesheet according to [SMACS
 
 <!-- MarkdownTOC autolink="true" bracket="round" autoanchor="false" lowercase="only_ascii" uri_encoding="true" levels="1,2,3" -->
 
+- [Directory Contents](#directory-contents)
 - [About](#about)
 - [Goals](#goals)
     - [Going SMACSS](#going-smacss)
@@ -19,6 +20,16 @@ An attempt to Sassify and improve the default PML stylesheet according to [SMACS
 <!-- /MarkdownTOC -->
 
 -----
+
+# Directory Contents
+
+- [`styles.scss`][styles.scss] — Sass main file that imports all others (in order)\:
+    - [`/base/`][base/] — SMACSS [Base rules].
+    - [`_layout.scss`][_layout] — SMACSS [Layout rules].
+    - [`_modules.scss`][_modules] — SMACSS [Modules rules].
+    - [`_states.scss`][_states] — SMACSS [States rules].
+- [`_pml-print-default.scss`][_pml-print-default] — default PML stylesheet for print (currently unused).
+
 
 # About
 
@@ -123,9 +134,14 @@ The following task-list is a provisional roadmap for the stylesheet work.
 [W3C » CSS Paged Media Module Level 3]: https://www.w3.org/TR/css-page-3/
 [W3C » CSS Generated Content for Paged Media Module]: https://www.w3.org/TR/css-gcpm-3/
 
-<!-- CSS schools -->
+<!-- SMACSS -->
 
 [SMACSS]: http://smacss.com "SMACSS website + free book"
+
+[Base Rules]: https://smacss.com/book/type-base/ "SMACSS » Ch. 4. Base Rules"
+[Layout Rules]: https://smacss.com/book/type-layout/ "SMACSS » Ch. 5. Layout Rules"
+[Modules Rules]: https://smacss.com/book/type-module/ "SMACSS » Ch. 6. Module Rules"
+[States Rules]: https://smacss.com/book/type-state/ "SMACSS » Ch. 7. State Rules"
 
 <!-- WebTypography.net -->
 
@@ -137,5 +153,16 @@ The following task-list is a provisional roadmap for the stylesheet work.
 [§2.1.2]: http://webtypography.net/2.1.2 "The Elements of Typographic Style Applied to the Web: §2.1.2. Choose a comfortable measure"
 [§2.4]: http://webtypography.net/2.4.1 "The Elements of Typographic Style Applied to the Web: §2.4. Etiquette of Hyphenation & Pagination"
 [§2.4.8]: http://webtypography.net/2.4.8 "The Elements of Typographic Style Applied to the Web: §2.4.8. Never begin a page with the last line of a multi-line paragraph"
+
+<!-- project files & folders -->
+
+[base/]: ./base/
+
+[_layout]: ./_layout.scss
+[_modules]: ./_modules.scss
+[_pml-print-default]: ./_pml-print-default.scss
+[_states]: ./_states.scss
+[styles.scss]: ./styles.scss
+
 
 <!-- EOF -->

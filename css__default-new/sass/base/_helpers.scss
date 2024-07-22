@@ -1,0 +1,14 @@
+// Helper classes for base styles that can't be achieved via HTML tags only.
+
+.smallcaps {
+  font-variant-caps: small-caps;
+  font-feature-settings: "smcp" 1;
+  font-variant-numeric: lining-nums; // force "uppercase" numerals!
+}
+
+.all-smallcaps {
+  font-variant-caps: all-small-caps;
+  font-feature-settings: "smcp" 1, "c2sc" 1;
+  text-transform: lowercase;
+  font-variant-numeric: lining-nums; // force "uppercase" numerals!
+}

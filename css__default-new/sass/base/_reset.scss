@@ -1,0 +1,18 @@
+// Custom CSS reset rules...
+
+
+// The following reset is recommended in "Web Typography" p.172,
+// but we can't enforce it until we've defined the margin and padding on all
+// our base elements:
+
+// html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup,
+// header, footer, address, p, hr, pre, blockquote, ol, ul, li, dl, dt, dd,
+// figure, figcaption, div, table, caption, form, fieldset {
+//   vertical-align: baseline;
+//   margin: 0;
+//   padding: 0;
+// }
+
+* {
+  box-sizing: border-box;
+}
