@@ -33,8 +33,9 @@ A playground for testing [PML] stylesheets.
 - [`/_assets/`][_assets/] — toolchain assets.
 - [`/css__default-new/`][css__default-new/] — an attempt to Sassify and improve the default theme.
 - [`/samples/`][samples/] — shared sample and test PML docs.
+- [`HTML_TEMPLATE.md`][HTML_TEMPLATE.md] — notes on the PMLC default HTML template.
 - [`LICENSE`][LICENSE] — MIT License.
-- [`Rakefile`][Rakefile] — build automation script (Ruby/Rake)
+- [`Rakefile`][Rakefile] — build automation script (Ruby/Rake).
 
 
 # About
@@ -172,7 +173,6 @@ Articles by [Christian Neumanns]:
 [PML Playground]: https://github.com/tajmone/pml-playground "Visit the PML Playground repository at GitHub"
 [stylesheets sub-project]: https://github.com/tajmone/pml-playground/tree/main/stylesheets "PML Playground » PML Style Sheets"
 
-
 <!-- badges -->
 
 [PML badge]: https://img.shields.io/badge/PML-4.0.0-yellow "Supported PML version (click for PML Companion download page)"
@@ -191,6 +191,7 @@ Articles by [Christian Neumanns]:
 [css__default-new/]: ./css__default-new/
 [samples/]: ./samples/
 
+[HTML_TEMPLATE.md]: ./HTML_TEMPLATE.md "Notes on PMLC default HTML template"
 [LICENSE]: ./LICENSE "View MIT License"
 [Rakefile]: ./Rakefile
 
